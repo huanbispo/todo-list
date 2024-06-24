@@ -1,0 +1,71 @@
+<mat-accordion class="category-accordion">
+  <mat-expansion-panel *ngFor="let category of categories">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ category.name }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <ng-container *ngIf="category.todos && category.todos.length > 0">
+      <mat-nav-list>
+        <mat-list-item *ngFor="let todo of category.todos">
+          <div class="todo-item">
+            <mat-checkbox
+              [checked]="todo.status === 2"
+              (change)="toggleTodoStatus(todo)"
+            >
+              <span [ngClass]="{ 'completed-task': todo.status === 2 }">{{
+                todo.title
+              }}</span>
+            </mat-checkbox>
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="viewTodoDetails(todo)"
+              [disabled]="todo.status === 2"
+            >
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteTodo(todo)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </mat-list-item>
+      </mat-nav-list>
+    </ng-container>
+
+    <ng-container *ngIf="!category.todos || category.todos.length === 0">
+      <p style="color: black">No tasks found.</p>
+    </ng-container>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<button
+  mat-raised-button
+  color="accent"
+  class="add-category-button"
+  (click)="showCategoryInput = true"
+>
+  Add Category
+</button>
+
+<div *ngIf="showCategoryInput" class="category-input">
+  <mat-form-field appearance="fill">
+    <mat-label>New Category</mat-label>
+    <input
+      matInput
+      [(ngModel)]="newCategoryName"
+      (keyup.enter)="addCategory()"
+      placeholder="Enter category name"
+    />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addCategory()">Add</button>
+  <!-- Cancel -->
+  <button mat-raised-button color="warn" (click)="showCategoryInput = false">
+    Cancel
+  </button>
+</div>
+
+<ng-container *ngIf="!categories.length">
+  <p style="color: white">No categories found.</p>
+</ng-container>

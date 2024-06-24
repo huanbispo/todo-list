@@ -1,0 +1,41 @@
+mat-expansion-panel {
+  margin-bottom: 10px;
+}
+
+.category-accordion {
+  max-height: 600px; /* Ajuste conforme necessário */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+.add-category-button {
+  margin-top: 10px;
+}
+
+.category-input {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-item mat-checkbox {
+  flex-grow: 1;
+}
+
+.todo-item button {
+  flex-shrink: 0;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: gray;
+}

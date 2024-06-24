@@ -1,0 +1,47 @@
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.form-field {
+  flex: 1 1 calc(25% - 16px);
+  min-width: 200px;
+}
+
+button {
+  align-self: flex-end;
+  margin-top: 16px;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-group span {
+  margin-left: 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+.attachments-container {
+  margin-top: 20px;
+}
+
+.attachments-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.attachments-container li {
+  margin: 5px 0;
+}
+
+.attachments-container a {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,50 @@
+.toolbar {
+  background: linear-gradient(135deg, #373b6e, #2d4a6b, #123646);
+  border-radius: 0 0 15px 15px; /* Apenas borda inferior arredondada */
+  margin: 0 20px; /* Remover a margem superior */
+  padding: 10px 20px;
+  color: white;
+}
+
+.card {
+  background: linear-gradient(135deg, #373b6e, #2d4a6b, #123646);
+  color: white;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-card-header {
+  border-radius: 15px 15px 0 0;
+}
+
+mat-card-content {
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 40%;
+  width: 500px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 500px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.card {
+  margin-bottom: 20px;
+}
